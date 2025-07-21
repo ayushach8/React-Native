@@ -1,11 +1,12 @@
 import { useState } from "react";
 import NavBar from "../Navbar/Navbar";
+import CartCard from "./Component/CartCard";
 
 const Cart = () => {
   const LocalStorage = localStorage.getItem("cart");
-  const [cartData, setCartData]=useState(JSON.parse(localStorage)|| []);
+  const [cartData, setCartData]=useState(JSON.parse(localStorage.getItem("cart"))|| []);
   return (
-     <div className="flex-1">
+    <div className="flex-1">
       <NavBar />
       <div className=" my-5">
         {cartData.map((item) => (
